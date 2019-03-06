@@ -8,7 +8,7 @@ Thermometer.prototype.increaseTemperature = function() {
 }
 Thermometer.prototype.decreaseTemperature = function() {
 
-  if (this.currentTemp > 10){
+  if (this.currentTemp > this.minimumTemp){
       this.currentTemp--;
   }
   else {

@@ -29,7 +29,7 @@ describe("Thermometer", function() {
       thermometer.decreaseTemperature();
       count++;
     }
-    expect(thermometer.currentTemp).toEqual(10);
+    expect(thermometer.currentTemp).toEqual(thermometer.minimumTemp);
     expect(function() {
       thermometer.decreaseTemperature();
     }).toThrowError("the minimum temperature cant be exceeded");

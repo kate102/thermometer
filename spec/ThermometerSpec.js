@@ -36,14 +36,14 @@ describe("Thermometer", function() {
   });
 
     it('sets the power saving mode on and max temp to 25', function(){
-      thermometer.setPowerSavingModeOn();
+      thermometer.setPowerSavingModeOn(true);
       expect(thermometer.powerSavingModeOn).toEqual(true);
       expect(thermometer.maximumTemp).toEqual(25);
     });
 
 
     it("if power saving mode on, restrict max temp to 25 degrees", function() {
-
+      thermometer.setPowerSavingModeOn(true);
       while (thermometer.currentTemp < 25){
         thermometer.increaseTemperature();
       }
@@ -53,5 +53,22 @@ describe("Thermometer", function() {
       }).toThrowError("the maximum temperature cant be exceeded");
     });
 
+    it('sets the power saving mode off and max temp to 32', function(){
+      thermometer.setPowerSavingModeOn(false);
+      expect(thermometer.powerSavingModeOn).toEqual(false);
+      expect(thermometer.maximumTemp).toEqual(32);
+    });
+
+
+    it("if power saving mode off, restrict max temp to 32 degrees", function() {
+      thermometer.setPowerSavingModeOn(false);
+      while (thermometer.currentTemp < 32){
+        thermometer.increaseTemperature();
+      }
+      expect(thermometer.currentTemp).toEqual(thermometer.maximumTemp);
+      expect(function() {
+        thermometer.increaseTemperature();
+      }).toThrowError("the maximum temperature cant be exceeded");
+    });
 
 });

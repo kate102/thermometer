@@ -25,7 +25,13 @@ Thermometer.prototype.decreaseTemperature = function() {
   }
 }
 
-Thermometer.prototype.setPowerSavingModeOn = function() {
-  this.powerSavingModeOn = true;
-  this.maximumTemp = 25;
+Thermometer.prototype.setPowerSavingModeOn = function(modeOn) {
+  this.powerSavingModeOn = modeOn;
+  if (this.powerSavingModeOn){
+    this.maximumTemp = 25;
+  }
+  else {
+    this.maximumTemp = 32;      
+  }
+
 }

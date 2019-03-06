@@ -74,4 +74,12 @@ describe("Thermometer", function() {
       thermometer.resetTemperature();
       expect(thermometer.currentTemp).toEqual(20);
     });
+
+    it("returns low usage when temperature < 18 degrees", function() {
+      while (thermometer.currentTemp > 17)
+      {
+        thermometer.decreaseTemperature();
+      }
+      expect(thermometer.showEnergyUsage()).toEqual("low-usage");
+    });
 });

@@ -35,6 +35,12 @@ Thermometer.prototype.setPowerSavingModeOn = function(modeOn) {
   }
 }
 
-  Thermometer.prototype.resetTemperature = function() {
-    this.currentTemp = 20
+Thermometer.prototype.resetTemperature = function() {
+  this.currentTemp = 20
+}
+
+Thermometer.prototype.showEnergyUsage = function() {
+  if (this.currentTemp < 18){
+    return 'low-usage';
   }
+}

@@ -6,7 +6,13 @@ function Thermometer() {
 }
 
 Thermometer.prototype.increaseTemperature = function() {
-  this.currentTemp++;
+  if(this.currentTemp < this.maximumTemp) {
+
+    this.currentTemp++;
+  }
+  else {
+    throw new Error("the maximum temperature cant be exceeded");
+  }
 }
 
 Thermometer.prototype.decreaseTemperature = function() {

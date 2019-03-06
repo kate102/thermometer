@@ -40,7 +40,17 @@ Thermometer.prototype.resetTemperature = function() {
 }
 
 Thermometer.prototype.showEnergyUsage = function() {
-  if (this.currentTemp < 18){
-    return 'low-usage';
+  switch(true){
+    case(this.currentTemp < 18):
+    {
+      energyUsage = 'low-usage';
+      break;
+    }
+    case(this.currentTemp >= 18 && this.currentTemp < 25):
+    {
+      energyUsage = 'medium-usage';
+      break;
+    }
   }
+  return energyUsage;
 }

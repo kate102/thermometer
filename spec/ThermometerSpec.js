@@ -82,4 +82,12 @@ describe("Thermometer", function() {
       }
       expect(thermometer.showEnergyUsage()).toEqual("low-usage");
     });
+
+    it("returns medium usage when temperature is 24 degrees", function() {
+      while (thermometer.currentTemp < 24)
+      {
+        thermometer.increaseTemperature();
+      }
+      expect(thermometer.showEnergyUsage()).toEqual("medium-usage");
+    });
 });

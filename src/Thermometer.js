@@ -40,6 +40,7 @@ Thermometer.prototype.resetTemperature = function() {
 }
 
 Thermometer.prototype.showEnergyUsage = function() {
+  console.log(this.currentTemp);
   switch(true){
     case(this.currentTemp < 18):
     {

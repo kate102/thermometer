@@ -15,4 +15,9 @@ describe("Thermometer", function() {
 
   })
 
+  it('decrease temperature by 1', function(){
+    thermometer.decreaseTemperature();
+    expect(thermometer.currentTemp).toEqual(19);
+
+  })
 });

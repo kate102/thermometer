@@ -5,3 +5,6 @@ function Thermometer() {
 Thermometer.prototype.increaseTemperature = function() {
   this.currentTemp++;
 }
+Thermometer.prototype.decreaseTemperature = function() {
+  this.currentTemp--;
+}

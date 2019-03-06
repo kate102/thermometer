@@ -59,7 +59,6 @@ describe("Thermometer", function() {
       expect(thermometer.maximumTemp).toEqual(32);
     });
 
-
     it("if power saving mode off, restrict max temp to 32 degrees", function() {
       thermometer.setPowerSavingModeOn(false);
       while (thermometer.currentTemp < 32){
@@ -71,4 +70,8 @@ describe("Thermometer", function() {
       }).toThrowError("the maximum temperature cant be exceeded");
     });
 
+    it("can reset to 20", function() {
+      thermometer.resetTemperature();
+      expect(thermometer.currentTemp).toEqual(20);
+    });
 });

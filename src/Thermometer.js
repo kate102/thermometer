@@ -52,6 +52,11 @@ Thermometer.prototype.showEnergyUsage = function() {
       energyUsage = 'medium-usage';
       break;
     }
+    case(this.currentTemp >= 25):
+    {
+      energyUsage = 'high-usage';
+      break;
+    }
   }
   return energyUsage;
 }

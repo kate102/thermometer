@@ -77,31 +77,17 @@ describe("Thermometer", function() {
 
     it("returns low usage when temperature < 18 degrees", function() {
       thermometer.currentTemp = Math.floor(Math.random() * (18-10)) + 10;
-
       expect(thermometer.showEnergyUsage()).toEqual("low-usage");
     });
 
-    it("returns medium usage when temperature is 24 degrees", function() {
-      while (thermometer.currentTemp != 24)
-      {
-        thermometer.increaseTemperature();
-      }
+    it("returns medium usage when temperature is betwen 18 and 24 degrees", function() {
+      thermometer.currentTemp = Math.floor(Math.random() * (24-19)) + 19;
       expect(thermometer.showEnergyUsage()).toEqual("medium-usage");
     });
 
-    it("returns medium usage when temperature is 18 degrees", function() {
-      while (thermometer.currentTemp != 18)
-      {
-        thermometer.decreaseTemperature();
-      }
-      expect(thermometer.showEnergyUsage()).toEqual("medium-usage");
+    it("returns medium usage when temperature >= 25 degrees", function() {
+      thermometer.currentTemp = Math.floor(Math.random() * (100-25)) + 25;
+      expect(thermometer.showEnergyUsage()).toEqual("high-usage");
     });
 
-    // it("returns high usage when temperature is 25 or higher", function() {
-    //   while (thermometer.currentTemp != 18)
-    //   {
-    //     thermometer.decreaseTemperature();
-    //   }
-    //   expect(thermometer.showEnergyUsage()).toEqual("medium-usage");
-    // });
 });

@@ -85,7 +85,7 @@ describe("Thermometer", function() {
       expect(thermometer.showEnergyUsage()).toEqual("medium-usage");
     });
 
-    it("returns medium usage when temperature >= 25 degrees", function() {
+    it("returns high usage when temperature >= 25 degrees", function() {
       thermometer.currentTemp = Math.floor(Math.random() * (100-25)) + 25;
       expect(thermometer.showEnergyUsage()).toEqual("high-usage");
     });

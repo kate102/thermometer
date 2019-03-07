@@ -1,8 +1,8 @@
 
-describe("Thermometer", function() {
+describe("Thermostat", function() {
 
   beforeEach(function() {
-    thermometer = new Thermometer();
+    thermometer = new Thermostat();
   });
 
   it("the inital temperature is 20 degrees", function() {

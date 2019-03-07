@@ -1,13 +1,24 @@
-// document).ready(function() { console.log('YAY!')})
 
-function Thermometer() {
+// $.getScript('../src/Thermostat.js', function()
+// {
+
+  $(document).ready(function() {
+    var thermostat = new Thermostat();
+    $('#temperature').text(thermostat.temperature);
+  })
+
+// });
+console.log('HEEELLLLPPPPP!!!')
+// document).ready(function() { console.log('YAY!')})
+///////////////////////////////////////////////////////
+function Thermostat() {
   this.currentTemp = 20
   this.minimumTemp = 10
   this.powerSavingModeOn = true
   this.maximumTemp = 25
 }
 
-Thermometer.prototype.increaseTemperature = function() {
+Thermostat.prototype.increaseTemperature = function() {
 
   if(this.currentTemp < this.maximumTemp) {
 
@@ -18,7 +29,7 @@ Thermometer.prototype.increaseTemperature = function() {
   }
 }
 
-Thermometer.prototype.decreaseTemperature = function() {
+Thermostat.prototype.decreaseTemperature = function() {
 
   if (this.currentTemp > this.minimumTemp){
       this.currentTemp--;
@@ -28,7 +39,7 @@ Thermometer.prototype.decreaseTemperature = function() {
   }
 }
 
-Thermometer.prototype.setPowerSavingMode = function() {
+Thermostat.prototype.setPowerSavingMode = function() {
   this.powerSavingModeOn = (!this.powerSavingModeOn);
   if (this.powerSavingModeOn){
     this.maximumTemp = 25;
@@ -38,11 +49,11 @@ Thermometer.prototype.setPowerSavingMode = function() {
   }
 }
 
-Thermometer.prototype.resetTemperature = function() {
+Thermostat.prototype.resetTemperature = function() {
   this.currentTemp = 20
 }
 
-Thermometer.prototype.showEnergyUsage = function() {
+Thermostat.prototype.showEnergyUsage = function() {
   console.log(this.currentTemp);
   switch(true){
     case(this.currentTemp < 18):
